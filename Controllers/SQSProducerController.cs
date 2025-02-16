@@ -9,12 +9,14 @@ namespace AWSEKS_WebAPI.Controllers
     public class SQSProducerController : ControllerBase
     {
 
-        private IAmazonSQS SQSClient;
+        private IAmazonSQS sqsClient;
 
         public SQSProducerController(IAmazonSQS sQSClient)
         {
-            SQSClient = sQSClient;
+            sqsClient = sQSClient;
         }
+
+
 
     }
 }
