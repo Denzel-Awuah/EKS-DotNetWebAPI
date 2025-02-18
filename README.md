@@ -3,7 +3,7 @@ A .NET 8 Web API that Produces messages and sends them to an SQS Queue. The mess
 
 ## Deployment 
 The .NET Web API application was containerized using Docker, then the image is pushed to a repository in Elastic Container Registry. The image was then pulled from ECR and deployed to Amazon Elastic Kubernetes Services (EKS).
-The Elastic Kubernetes Services Cluster was deployed to a managed nodegroup using AWS EC2 Instances. An Application Load Balancer was also deployed to balance the traffic coming into the cluster.
+The .NET Web API image pulled from ECR was deployed to a managed nodegroup within Elastic Kubernetes Service using AWS EC2 Instances. A Load Balancer was also deployed to balance the traffic coming into the cluster.
 
 
 ## Deployment Strategy
