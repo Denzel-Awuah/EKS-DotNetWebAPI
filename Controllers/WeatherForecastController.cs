@@ -18,7 +18,7 @@ namespace AWSEKS_WebAPI.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -29,5 +29,12 @@ namespace AWSEKS_WebAPI.Controllers
             })
             .ToArray();
         }
+    }
+
+    public class WeatherForecast
+    {
+        public DateOnly Date { get; set; }
+        public int TemperatureC { get; set; }
+        public string Summary { get; set; }
     }
 }
