@@ -1,0 +1,42 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dotnet-webapi
+  name: dotnet-webapi-deployment-recent
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dotnet-webapi
+  template:
+    metadata:
+      name: dotnet-webapi
+      labels:
+        app: dotnet-webapi
+    spec:
+      containers:
+      - image: 544052154038.dkr.ecr.ca-central-1.amazonaws.com/denzelawuah/awsekswebapi:latest
+        imagePullPolicy: Always
+        name: dotnet-webapi-service
+        ports:
+          - containerPort: 8080
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: dotnet-webapi
+  name: dotnet-webapi-service
+  namespace: default
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: dotnet-webapi
+  
