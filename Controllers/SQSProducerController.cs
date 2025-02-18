@@ -1,4 +1,6 @@
 ﻿using Amazon.SQS;
+using AWSEKS_WebAPI.Models;
+using AWSEKS_WebAPI.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,13 +11,19 @@ namespace AWSEKS_WebAPI.Controllers
     public class SQSProducerController : ControllerBase
     {
 
-        private IAmazonSQS sqsClient;
+        private readonly ISQSProducer _sqsProducer;
 
-        public SQSProducerController(IAmazonSQS sQSClient)
+        public SQSProducerController(ISQSProducer sqsProducer)
         {
-            sqsClient = sQSClient;
+            _sqsProducer = sqsProducer;
         }
 
+        [HttpPost]
+        public async Task<IActionResult> SendMessageAsync([FromBody] Message message)
+        {
+            var response = await _sqsProducer.SendMessageAsync(message);
+            return Ok(response);
+        }
 
     }
 }

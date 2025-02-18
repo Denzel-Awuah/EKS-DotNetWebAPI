@@ -9,7 +9,7 @@ namespace AWSEKS_WebAPI.Service
     public class SQSProducerService : ISQSProducer
     {
         private readonly IAmazonSQS _sqsClient;
-        private readonly string _queueUrl = "";
+        private readonly string _queueUrl = "https://sqs.ca-central-1.amazonaws.com/544052154038/dotnet-eks";
 
         public SQSProducerService(IAmazonSQS sqsClient)
         {
