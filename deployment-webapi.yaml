@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: dotnet-webapi
-  name: dotnet-webapi-deployment-recent
+  name: dotnet-webapi-deployment
   namespace: default
 spec:
   replicas: 2
