@@ -15,6 +15,20 @@ namespace AWSEKS_WebAPI.Service
         {
             _sqsClient = sqsClient;
         }
+
+        public async Task<List<Message>> GetMessagesAsync()
+        {
+            var request = new ReceiveMessageRequest
+            {
+                QueueUrl = _queueUrl,
+            };
+            var response = await _sqsClient.ReceiveMessageAsync(request);
+            var messages = response.Messages
+                .Select(m => JsonSerializer.Deserialize<Message>(m.Body))
+                .ToList();
+            return messages;
+        }
+
         public async Task<Message> SendMessageAsync(Message message)
         {
             var request = new SendMessageRequest

@@ -19,9 +19,16 @@ namespace AWSEKS_WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SendMessageAsync([FromBody] Message message)
+        public async Task<IActionResult> SendMessage([FromBody] Message message)
         {
             var response = await _sqsProducer.SendMessageAsync(message);
+            return Ok(response);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetMessages()
+        {
+            var response = await _sqsProducer.GetMessagesAsync();
             return Ok(response);
         }
 

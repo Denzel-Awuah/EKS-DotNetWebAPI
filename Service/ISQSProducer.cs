@@ -7,5 +7,6 @@ namespace AWSEKS_WebAPI.Service
     public interface ISQSProducer
     {
         Task<Message> SendMessageAsync(Message message);
+        Task<List<Message>> GetMessagesAsync();
     }
 }
