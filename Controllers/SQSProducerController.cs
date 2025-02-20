@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AWSEKS_WebAPI.Controllers
 {
+
+    /// <summary>
+    /// API Controller for communicating with SQS
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class SQSProducerController : ControllerBase
@@ -19,7 +23,7 @@ namespace AWSEKS_WebAPI.Controllers
         }
         
         /// <summary>
-        /// Send a message to the AWS SQS Queue
+        /// Send a message to SQS 
         /// </summary>
         /// <param name="message">The message that is sent to the queue</param>
         /// <returns>Returns an ok respsonse and the message that was sent to the queue</returns>
