@@ -11,7 +11,13 @@ namespace AWSEKS_WebAPI.Service
     /// </summary>
     public class SQSProducerService : ISQSProducer
     {
+        /// <summary>
+        /// The SQS client that is used to interact with AWS
+        /// </summary>
         private readonly IAmazonSQS _sqsClient;
+        /// <summary>
+        /// The URL of the SQS Queue
+        /// </summary>
         private readonly string _queueUrl = "https://sqs.ca-central-1.amazonaws.com/544052154038/dotnet-eks";
 
         public SQSProducerService(IAmazonSQS sqsClient)
