@@ -15,8 +15,15 @@ namespace AWSEKS_WebAPI.Controllers
     public class SQSProducerController : ControllerBase
     {
 
+        /// <summary>
+        /// The SQS Producer Service
+        /// </summary>
         private readonly ISQSProducer _sqsProducer;
 
+        /// <summary>
+        /// Contructor to initialize the Controller 
+        /// </summary>
+        /// <param name="sqsProducer">The Producer Service to communicate with AWS queue</param>
         public SQSProducerController(ISQSProducer sqsProducer)
         {
             _sqsProducer = sqsProducer;
