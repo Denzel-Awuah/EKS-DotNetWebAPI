@@ -6,6 +6,9 @@ using Message = AWSEKS_WebAPI.Models.Message;
 
 namespace AWSEKS_WebAPI.Service
 {
+    /// <summary>
+    /// Service for interacting with AWS SQS 
+    /// </summary>
     public class SQSProducerService : ISQSProducer
     {
         private readonly IAmazonSQS _sqsClient;
