@@ -18,6 +18,11 @@ namespace AWSEKS_WebAPI.Controllers
             _sqsProducer = sqsProducer;
         }
 
+        /// <summary>
+        /// Send a message to the AWS SQS Queue
+        /// </summary>
+        /// <param name="message">The message that is sent to the queue</param>
+        /// <returns>Returns an ok respsonse and the message that was sent to the queue</returns>
         [HttpPost]
         public async Task<IActionResult> SendMessage([FromBody] Message message)
         {
