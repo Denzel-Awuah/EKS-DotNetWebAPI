@@ -29,7 +29,11 @@ namespace AWSEKS_WebAPI.Controllers
             var response = await _sqsProducer.SendMessageAsync(message);
             return Ok(response);
         }
-
+        
+        /// <summary>
+        /// Get all the messages from the AWS SQS Queue
+        /// </summary>
+        /// <returns>Returns a list of messages from the queue</returns>
         [HttpGet]
         public async Task<IActionResult> GetMessages()
         {
