@@ -6,7 +6,7 @@ metadata:
   name: dotnet-webapi-deployment
   namespace: default
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: dotnet-webapi
@@ -17,7 +17,7 @@ spec:
         app: dotnet-webapi
     spec:
       containers:
-      - image: 544052154038.dkr.ecr.ca-central-1.amazonaws.com/denzelawuah/awsekswebapi:latest
+      - image: 544052154038.dkr.ecr.ca-central-1.amazonaws.com/denzelawuah/awsekswebapi:v2.0
         imagePullPolicy: Always
         name: dotnet-webapi-service
         ports:
