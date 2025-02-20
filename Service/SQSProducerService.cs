@@ -19,6 +19,10 @@ namespace AWSEKS_WebAPI.Service
             _sqsClient = sqsClient;
         }
 
+        /// <summary>
+        /// Retrieves all the messages from the Queue
+        /// </summary>
+        /// <returns>Returns a list of messages</returns>
         public async Task<List<Message>> GetMessagesAsync()
         {
             var request = new ReceiveMessageRequest
