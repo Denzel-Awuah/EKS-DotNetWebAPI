@@ -15,6 +15,7 @@ namespace AWSEKS_WebAPI.Service
         /// The SQS client that is used to interact with AWS
         /// </summary>
         private readonly IAmazonSQS _sqsClient;
+        
         /// <summary>
         /// The URL of the SQS Queue
         /// </summary>
