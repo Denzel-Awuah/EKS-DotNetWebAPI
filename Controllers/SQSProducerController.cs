@@ -17,7 +17,7 @@ namespace AWSEKS_WebAPI.Controllers
         {
             _sqsProducer = sqsProducer;
         }
-
+        
         /// <summary>
         /// Send a message to the AWS SQS Queue
         /// </summary>

@@ -4,6 +4,9 @@ using Message = AWSEKS_WebAPI.Models.Message;
 
 namespace AWSEKS_WebAPI.Service
 {
+    /// <summary>
+    /// Interface for interacting with AWS SQS Service
+    /// </summary>
     public interface ISQSProducer
     {
         Task<Message> SendMessageAsync(Message message);
