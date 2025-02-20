@@ -21,6 +21,10 @@ namespace AWSEKS_WebAPI.Service
         /// </summary>
         private readonly string _queueUrl = "https://sqs.ca-central-1.amazonaws.com/544052154038/dotnet-eks";
 
+        /// <summary>
+        /// Constructor to initialize the SQS Producer Service
+        /// </summary>
+        /// <param name="sqsClient"></param>
         public SQSProducerService(IAmazonSQS sqsClient)
         {
             _sqsClient = sqsClient;

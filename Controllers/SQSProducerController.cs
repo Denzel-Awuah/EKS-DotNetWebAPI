@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AWSEKS_WebAPI.Controllers
 {
-
     /// <summary>
     /// API Controller for communicating with SQS
     /// </summary>
@@ -14,7 +13,6 @@ namespace AWSEKS_WebAPI.Controllers
     [ApiController]
     public class SQSProducerController : ControllerBase
     {
-
         /// <summary>
         /// The SQS Producer Service
         /// </summary>
@@ -51,6 +49,5 @@ namespace AWSEKS_WebAPI.Controllers
             var response = await _sqsProducer.GetMessagesAsync();
             return Ok(response);
         }
-
     }
 }
