@@ -31,7 +31,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapGet("/",  () => "Hello World, this is app version 2!");
+app.MapGet("/",  () => "Hello World, this is the latest version of the app!");
 
 app.MapControllers();
 
