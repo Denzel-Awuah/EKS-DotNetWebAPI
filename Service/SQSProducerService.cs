@@ -36,6 +36,11 @@ namespace AWSEKS_WebAPI.Service
             return messages;
         }
 
+        /// <summary>
+        /// Sends a message to SQS
+        /// </summary>
+        /// <param name="message">The message that is sent to SQS</param>
+        /// <returns>Returns the message</returns>
         public async Task<Message> SendMessageAsync(Message message)
         {
             var request = new SendMessageRequest
