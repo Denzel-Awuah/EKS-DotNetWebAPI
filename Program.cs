@@ -28,7 +28,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/",  () => "Hello World!");
 
 app.MapControllers();
 
